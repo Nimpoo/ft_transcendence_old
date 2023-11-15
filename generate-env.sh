@@ -14,20 +14,47 @@ if [ -f ".env" ]; then
 
 fi
 
+printf 'Some variable will ask prompt, press `enter` for none.\n\n'
+
 cat << EOF > .env
 # 42's api keys
-API_42_UID="$(printf "1) Write your uid api: " 1>&2;read api;echo $api)"
-API_42_SECRET="$(printf "2) Write your secret api: " 1>&2;read api;echo $api)"
+API_42_UID="$(printf "Write your 42 uid api: " 1>&2;read api;echo $api)"
+API_42_SECRET="$(printf "Write your 42 secret api: " 1>&2;read api;echo $api)"
 
+EOF
+
+printf "\n"
+
+cat << EOF >> .env
+# GitHub's api keys
+GITHUB_ID="$(printf "Write your GitHub uid api: " 1>&2;read api;echo $api)"
+GITHUB_SECRET="$(printf "Write your GitHub uid api: " 1>&2;read api;echo $api)"
+
+EOF
+
+printf "\n"
+
+cat << EOF >> .env
 # Frontend
-FRONT_HOST="$(printf "3) Write your host: " 1>&2;read host;echo $host)"
+NEXTAUTH_URL="$(printf "Write your host: " 1>&2;read host;echo $host)"
+NEXTAUTH_SECRET="$(openssl rand -base64 32)"
 
+EOF
+
+printf "\n"
+
+cat << EOF >> .env
 # Backend
 JWT_SECRET="$(openssl rand -base64 32)"
 
+EOF
+
+cat << EOF >> .env
 # Postgres
 POSTGRES_HOST="postgres"
 POSTGRES_DB="ft_transcendence"
 POSTGRES_USER="user"
 POSTGRES_PASSWORD="$(openssl rand -base64 32)"
 EOF
+
+printf ".env created\n"

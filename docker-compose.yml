@@ -13,3 +13,9 @@ services:
     container_name: adminer
     ports: [ 8080:8080 ]
     depends_on: [ postgres ]
+
+  frontend:
+    build: frontend/
+    container_name: ping
+    ports: [ 80:3000 ]
+    env_file: .env
