@@ -1,7 +1,14 @@
-function Home(): JSX.Element {
+'use strict'
+'use client'
+
+import Button from "@/components/Button"
+
+export default function Home() {
+
 	return (
-		<h1 className="m-auto pt-40 text-center text-4xl">Hello, World!</h1>
+		<div className="min-h-screen flex items-center justify-center">
+			{/* <LoginButton /> */}
+			<Button />
+		</div>
 	)
 }
-
-export default Home
