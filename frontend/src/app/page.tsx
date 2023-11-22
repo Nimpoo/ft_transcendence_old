@@ -1,14 +1,15 @@
 'use strict'
-'use client'
 
-import Button from "@/components/Button"
+import PressButton from "@/components/PressButton"
 
 export default function Home() {
 
 	return (
 		<div className="min-h-screen flex items-center justify-center">
 			{/* <LoginButton /> */}
-			<Button />
+			<PressButton color="red">
+				text
+			</PressButton>
 		</div>
 	)
 }
