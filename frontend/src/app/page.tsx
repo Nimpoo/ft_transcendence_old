@@ -8,7 +8,7 @@ export default function Home() {
 		<div className="min-h-screen flex items-center justify-center">
 			{/* <LoginButton /> */}
 			<PressButton color="red">
-				text
+				One Piece !
 			</PressButton>
 		</div>
 	)
