@@ -12,7 +12,7 @@ export default function PressButton( {color, children} : {color: string, childre
 		<button className="relative text-xl font-thin group">
 
 			{/* BACKGROUND */}
-			<div className={`absolute
+			<div className={`absolute cursor-default
 			inset-0 h-full top-2 -bottom-2 left-2 -right-2
 			bg-${color}-500
 			border-r-2 border-b-2 border-${color}-900`}
