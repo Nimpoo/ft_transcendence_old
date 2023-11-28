@@ -1,4 +1,5 @@
-'use strict'
+"use strict"
+"use client"
 
 import PressButton from "@/components/PressButton"
 
@@ -8,7 +9,7 @@ export default function Home() {
 		<div className="min-h-screen flex items-center justify-center">
 			{/* <LoginButton /> */}
 			<PressButton color="red">
-				One Piece !
+				Home
 			</PressButton>
 		</div>
 	)
