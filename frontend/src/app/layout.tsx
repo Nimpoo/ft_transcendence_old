@@ -1,11 +1,10 @@
-'use strict'
+"use strict"
 
 import { Metadata } from "next"
-import "tailwindcss/tailwind.css"
 
 export const metadata: Metadata = {
-	title: 'ft_transcendence',
-	description: 'a 42 project',
+	title: "ft_transcendence",
+	description: "a 42 project",
 }
 
 export default function RootLayout({
@@ -15,7 +14,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-gray-900 text-gray-50">
+			<body>
 				{children}
 			</body>
 		</html>

@@ -1,6 +1,17 @@
+"use strict"
+"use client"
+
+import { signIn, signOut, useSession } from "next-auth/react"
+
 function Home(): JSX.Element {
+	const { data: session } = useSession()
+
 	return (
-		<h1 className="m-auto pt-40 text-center text-4xl">Hello, World!</h1>
+		<div>
+			username: {session?.user?.name}<br />
+			<button onClick={() => signIn()}>sign in</button><br />
+			<button onClick={() => signOut()}>sign out</button>
+		</div>
 	)
 }
 
