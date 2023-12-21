@@ -1,0 +1,56 @@
+#title span {
+	position: relative;
+}
+
+@keyframes slide1 {
+	0% {
+		opacity: 0;
+		right: 125px;
+	}
+	70% {
+		opacity: 1;
+		right: 0px;
+	}
+}
+
+@keyframes slide2 {
+	0% {
+		opacity: 0;
+		right: 125px;
+	}
+	15% {
+		opacity: 0;
+		right: 125px;
+	}
+	85% {
+		opacity: 1;
+		right: 0px;
+	}
+}
+
+@keyframes slide3 {
+	0% {
+		opacity: 0;
+		right: 125px;
+	}
+	30% {
+		opacity: 0;
+		right: 125px;
+	}
+	100% {
+		opacity: 1;
+		right: 0px;
+	}
+}
+
+#title span:nth-child(1) {
+	animation: slide1 1s ease-in-out;
+}
+
+#title span:nth-child(2) {
+	animation: slide2 1s ease-in-out;
+}
+
+#title span:nth-child(3) {
+	animation: slide3 1s ease-in-out;
+}
