@@ -4,18 +4,29 @@ services:
 
   postgres:
     image: postgres
-    container_name: postgres
-    ports: [ 5432:5432 ]
     env_file: .env
+    restart: unless-stopped
 
   adminer:
     image: adminer
-    container_name: adminer
-    ports: [ 8080:8080 ]
-    depends_on: [ postgres ]
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    restart: unless-stopped
 
-  frontend:
+  ping:
     build: frontend/
-    container_name: ping
-    ports: [ 80:3000 ]
+    ports:
+      - 80:3000
     env_file: .env
+    depends_on:
+      - pong
+    restart: unless-stopped
+
+  pong:
+    build: backend/
+    env_file: .env
+    depends_on:
+      - postgres
+    restart: unless-stopped

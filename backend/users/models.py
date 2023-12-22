@@ -1,8 +1,4 @@
 from django.db import models
-<<<<<<< Updated upstream
-
-# Create your models here.
-=======
 from django.utils import timezone
 from random_username.generate import generate_username
 
@@ -25,4 +21,3 @@ class User(models.Model):
   dfa_secret = models.CharField(max_length=50, null=True)
 
   created_at = models.DateTimeField("date published", default=timezone.now)
->>>>>>> Stashed changes

@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-from django.shortcuts import render
-
-# Create your views here.
-=======
 from django.http import HttpRequest, HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from .models import User
 
@@ -44,4 +39,3 @@ def connect(request: HttpRequest):
     return HttpResponseNotAllowed(f"the provider '{provider}' isn't available.")
 
   return HttpResponse(user.nickname)
->>>>>>> Stashed changes
