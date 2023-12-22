@@ -31,6 +31,20 @@ const handler = NextAuth({
 
 		return providers
 	})(),
+
+	callbacks: {
+		async signIn({ user, account }) {
+			if (account) {
+				const { access_token, provider } = account
+				const response = await fetch("http://localhost:8000/users/connect", { method: "GET", headers: { "Authorization": `Bearer ${access_token}`, provider } })
+				user.name = await response.text()
+				console.log('status:', response.status)
+				console.log(account, user)
+				return response.status === 200
+			}
+			return false
+		}
+	}
 })
 
 export { handler as GET, handler as POST }
