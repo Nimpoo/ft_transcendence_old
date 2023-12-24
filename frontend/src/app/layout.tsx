@@ -23,18 +23,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<head>
 			</head>
-			<body className={ "bg-[url('/bg.png')] bg-cover bg-fixed bg-center bg-no-repeat " + ubu.className }>
-				<Header />
-				<div className="gradient-bg">
-					<div className="gradient-container">
-						<div className="g1"></div>
-						<div className="g2"></div>
-						<div className="g3"></div>
-						<div className="g4"></div>
-						<div className="g5"></div>
+			<body className={ "bg-[url('/bg.png')] bg-cover bg-fixed bg-center bg-no-repeat text-white " + ubu.className }>
+				<div className="m-auto max-w-7xl">
+					<Header />
+					{children}
+					<div className="gradient-bg">
+						<div className="gradient-container">
+							<div className="g1"></div>
+							<div className="g2"></div>
+							<div className="g3"></div>
+							<div className="g4"></div>
+							<div className="g5"></div>
+						</div>
 					</div>
 				</div>
-				{children}
 			</body>
 		</html>
 	)

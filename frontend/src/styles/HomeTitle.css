@@ -7,7 +7,7 @@
 		opacity: 0;
 		right: 125px;
 	}
-	70% {
+	80% {
 		opacity: 1;
 		right: 0px;
 	}
@@ -18,11 +18,11 @@
 		opacity: 0;
 		right: 125px;
 	}
-	15% {
+	10% {
 		opacity: 0;
 		right: 125px;
 	}
-	85% {
+	90% {
 		opacity: 1;
 		right: 0px;
 	}
@@ -33,7 +33,7 @@
 		opacity: 0;
 		right: 125px;
 	}
-	30% {
+	20% {
 		opacity: 0;
 		right: 125px;
 	}
