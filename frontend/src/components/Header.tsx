@@ -7,7 +7,7 @@ export default function Header(): JSX.Element {
 
 		<header className="
 				bg-neutral-950 bg-opacity-[0.08]
-				mt-12 ml-20 mr-20
+				my-11
 				xl:h-20 lg:h-16 
 				flex justify-center items-center
 				">
