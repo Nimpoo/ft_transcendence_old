@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import ProviderButton from '@/components/ProviderButton'
 
-import '@/styles/HomeTitle.css'
+import '@/styles/Home.css'
 
 export default function Home(): JSX.Element {
 
@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
 						Final Project.
 					</span>
 				</h1>
-				<div className="
+				<div id="provider-button-list" className="
 					items-center justify-center flex max-h-[384px] max-w-[500px]
 					flex-col flex-grow flex-wrap text-center
 				">
