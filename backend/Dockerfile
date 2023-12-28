@@ -2,9 +2,11 @@ FROM python:latest
 
 WORKDIR /app
 
-COPY . .
+RUN apt-get update && apt-get -y install ncat
+
+COPY requirements.txt .
 RUN python -m pip install --no-cache-dir --requirement requirements.txt
 
-RUN apt-get update && apt-get -y install ncat
+COPY . .
 
 ENTRYPOINT [ "sh", "entrypoint.sh" ]

@@ -14,7 +14,7 @@ if [ -f ".env" ]; then
 
 fi
 
-printf "Some variable will ask prompt, press \`enter\` for none.\n\n"
+printf "Some variables will be asked, press \`enter\` for none.\n\n"
 
 cat << EOF > .env
 # 42's api keys
@@ -41,7 +41,8 @@ AUTH_DISCORD_SECRET="$(printf "Write your Discord secret api: " 1>&2; read api; 
 
 EOF
 
-printf "\n"
+printf "\n\e[34;1minfo: the \`host\` is your main page. this will be used to redirect\n\e[0m"
+printf "\e[33;1mwarning: you have to set \`redirect_uri\` in your api settings at your \`host\` (e.g. http://localhost:3000)\n\e[0m"
 
 cat << EOF >> .env
 # Frontend
