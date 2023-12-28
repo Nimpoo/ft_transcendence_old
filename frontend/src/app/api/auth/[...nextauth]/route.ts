@@ -3,6 +3,7 @@ import FortyTwo from "next-auth/providers/42-school";
 import Discord from "next-auth/providers/discord";
 import Github from "next-auth/providers/github";
 import { Provider } from "next-auth/providers/index";
+import jwt from "jsonwebtoken";
 
 const handler = NextAuth({
 	providers: ((): Provider[] => {
@@ -34,13 +35,19 @@ const handler = NextAuth({
 
 	callbacks: {
 		async signIn({ user, account }) {
-			if (account) {
-				const { access_token, provider } = account
-				const response = await fetch("http://localhost:8000/users/connect", { method: "GET", headers: { "Authorization": `Bearer ${access_token}`, provider } })
-				user.name = await response.text()
-				console.log('status:', response.status)
-				console.log(account, user)
-				return response.status === 200
+			let jwt_secret = process.env["JWT_SECRET"]
+			if (account && jwt_secret) {
+				let response = await fetch("http://pong:8000/users/connect", { method: "POST", body: jwt.sign(account, jwt_secret) })
+				let data = await response.json()
+				console.log("data:", { status: response.status, ...data })
+				if (response.status !== 200)
+					return false
+
+				user.name = data.nickname
+				console.log(account)
+				console.log(user)
+
+				return true
 			}
 			return false
 		}

@@ -9,14 +9,9 @@ def random_username():
 class User(models.Model):
   nickname = models.CharField(max_length=30, default=random_username)
 
-  fortytwo_token = models.CharField(max_length=70, null=True)
-  fortytwo_refresh_token = models.CharField(max_length=70, null=True)
-
-  github_token = models.CharField(max_length=70, null=True)
-  github_refresh_token = models.CharField(max_length=70, null=True)
-
-  discord_token = models.CharField(max_length=70, null=True)
-  discord_refresh_token = models.CharField(max_length=70, null=True)
+  fortytwo_id = models.CharField(max_length=40, null=True)
+  github_id = models.CharField(max_length=40, null=True)
+  discord_id = models.CharField(max_length=40, null=True)
 
   dfa_secret = models.CharField(max_length=50, null=True)
 

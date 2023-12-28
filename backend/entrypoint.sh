@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Waiting for PostgreSQL
-until nc -z -v -w30 postgres 5432
+until nc -z -w30 postgres 5432
 do
   echo "Attente de PostgreSQL..."
   sleep 1
