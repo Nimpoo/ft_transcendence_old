@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.9",
     "next": "^14.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.69.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -21,7 +21,8 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
-    "postcss": "^8",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.2",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
