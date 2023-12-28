@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 import { Metadata } from "next"
 import "tailwindcss/tailwind.css"
 
-import '@/styles/Bg.scss'
+import '@/styles/Bg.css'
 
 import { Ubuntu } from 'next/font/google'
 
