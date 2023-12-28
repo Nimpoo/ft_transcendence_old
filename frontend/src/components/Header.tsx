@@ -1,7 +1,15 @@
 "use strict"
 "use client"
 
+import Image from 'next/image';
+
 export default function Header(): JSX.Element {
+
+	function play(value: "luffy" | "zoro" | "nami" | "usopp") {
+		let audioObject:HTMLAudioElement = new Audio(`sound/${value}.wav`);
+		audioObject.volume = 0.3;
+		audioObject.autoplay = true;
+	}
 
 	return (
 
@@ -12,17 +20,21 @@ export default function Header(): JSX.Element {
 				flex justify-center items-center
 				">
 
-			<button>
-				<img className="
-					h-4 xl:h-20 lg:h-16 md:h-10 sm:h-6
-					mr-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" src="/mugiwara/ussop.png" alt="Sniperking !"
+			<button onClick={ () => play("usopp") }>
+				<Image className="mr-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
+					src={'/mugiwara/ussop.png'}
+					width={68}
+					height={68}
+					alt="Sniperking !"
 				/>
 			</button>
 
-			<button>
-				<img className="
-					h-4 xl:h-20 lg:h-16 md:h-10 sm:h-6
-					mr-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" src="/mugiwara/nami.png" alt="Tangarine !"
+			<button onClick={ () => play("nami") }>
+				<Image className="mr-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
+					src={'/mugiwara/nami.png'}
+					width={68}
+					height={68}
+					alt="Tangarine !"
 				/>
 			</button>
 			<p className="
@@ -34,17 +46,31 @@ export default function Header(): JSX.Element {
 				The Transcendence
 
 			</p>
-			<button>
-				<img className="
-					h-3 xl:h-[4.25rem] lg:h-[3.25rem] md:h-[2.25rem] sm:h-[1.5rem]
-					ml-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" src="/mugiwara/zoro.png" alt="Saber !"
+			<button onClick={ () => play("zoro") }>
+				<Image className="ml-3 w-auto h-auto drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
+					src={'/mugiwara/zoro.png'}
+					width={60}
+					height={60}
+					alt="Saber !"
 				/>
 			</button>
 
-			<button>
-				<img className="
-					h-3 xl:h-[4.25rem] lg:h-[3.25rem] md:h-[2.25rem] sm:h-[1.5rem]
-					ml-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" src="/mugiwara/luffy.png" alt="Meat !" />
+			<button onClick={ () => play("luffy") }>
+				<Image className="ml-3 w-auto h-auto drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
+					src={'/mugiwara/luffy.png'}
+					width={60}
+					height={60}
+					alt="Meat !"
+				/>
+			</button>
+
+			<button className="absolute right-32">
+				<Image className="rounded-full"
+					src={'https://thispersondoesnotexist.com'}
+					width={80}
+					height={80}
+					alt="pfp"
+				/>
 			</button>
 
 		</header>
