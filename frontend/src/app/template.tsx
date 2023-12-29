@@ -1,15 +1,18 @@
 "use strict"
 "use client"
 
-import ProviderButton from "@/components/ProviderButton"
-import { NextUIProvider } from "@nextui-org/react"
+import { SessionProvider } from "next-auth/react"
 
-export default function Template({ children }: { children: React.ReactNode }) {
-
+function Template({
+	children
+}: {
+	children: React.ReactNode
+}): JSX.Element {
 	return (
-		<NextUIProvider>
+		<SessionProvider>
 			{children}
-		</NextUIProvider>	
+		</SessionProvider>
 	)
-
 }
+
+export default Template

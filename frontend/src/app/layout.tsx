@@ -14,8 +14,8 @@ const ubu = Ubuntu ({
 })
 
 export const metadata: Metadata = {
-	title: 'ft_transcendence',
-	description: 'a 42 project',
+	title: "ft_transcendence",
+	description: "a 42 project",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
