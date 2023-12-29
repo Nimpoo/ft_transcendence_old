@@ -2,15 +2,13 @@
 
 import Header from "@/components/Header"
 import { Metadata } from "next"
+import { Ubuntu } from "next/font/google"
 import "tailwindcss/tailwind.css"
-
-import '@/styles/Bg.css'
-
-import { Ubuntu } from 'next/font/google'
+import "@/styles/Background.css"
 
 const ubu = Ubuntu ({
-	subsets: ['latin'],
-	weight: '500'
+	subsets: ["latin"],
+	weight: "500"
 })
 
 export const metadata: Metadata = {
@@ -18,7 +16,11 @@ export const metadata: Metadata = {
 	description: "a 42 project",
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+function RootLayout({
+	children
+}: {
+	children: React.ReactNode
+}): JSX.Element {
 	return (
 		<html lang="en">
 			<head>
@@ -27,17 +29,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<div className="m-auto max-w-7xl">
 					<Header />
 					{children}
+
 					<div className="gradient-bg">
 						<div className="gradient-container">
-							<div className="g1"></div>
-							<div className="g2"></div>
-							<div className="g3"></div>
-							<div className="g4"></div>
-							<div className="g5"></div>
+							<div className="g1" />
+							<div className="g2" />
+							<div className="g3" />
+							<div className="g4" />
+							<div className="g5" />
 						</div>
 					</div>
+
 				</div>
 			</body>
 		</html>
 	)
 }
+
+export default RootLayout

@@ -3,22 +3,15 @@
 
 import Image from 'next/image';
 
-export default function Header(): JSX.Element {
+function Header(): JSX.Element {
 
 	function play(value: "luffy" | "zoro" | "nami" | "usopp") {
 		let audioObject:HTMLAudioElement = new Audio(`sound/${value}.wav`);
 		audioObject.volume = 0.3;
 		audioObject.autoplay = true;
 	}
-
 	return (
-
-		<header className="
-				bg-neutral-950 bg-opacity-[0.08]
-				my-11
-				xl:h-20 lg:h-16 
-				flex justify-center items-center
-				">
+		<header className="bg-neutral-950 bg-opacity-[0.08] my-11 xl:h-20 lg:h-16  flex justify-center items-center">
 
 			<button onClick={ () => play("usopp") }>
 				<Image className="mr-3 drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
@@ -37,14 +30,9 @@ export default function Header(): JSX.Element {
 					alt="Tangarine !"
 				/>
 			</button>
-			<p className="
-				text-gray-900 dark:text-white
-				xl:text-6xl lg:text-5xl md:text-3xl sm:text-2xl
-				text-center drop-shadow-[4px_3px_1px_rgba(0,0,0,0.25)]
-			">
 
+			<p className="text-gray-900 dark:text-white xl:text-6xl lg:text-5xl md:text-3xl sm:text-2xl text-center drop-shadow-[4px_3px_1px_rgba(0,0,0,0.25)]">
 				The Transcendence
-
 			</p>
 			<button onClick={ () => play("zoro") }>
 				<Image className="ml-3 w-auto h-auto drop-shadow-[4px_4px_2px_rgba(0,0,0,0.25)]" 
@@ -74,6 +62,7 @@ export default function Header(): JSX.Element {
 			</button>
 
 		</header>
-
 	)
 }
+
+export default Header

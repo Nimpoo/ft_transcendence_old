@@ -5,7 +5,7 @@ services:
   postgres:
     image: postgres
     env_file: .env
-    restart: unless-stopped
+    restart: on-failure
 
   adminer:
     image: adminer
@@ -13,20 +13,20 @@ services:
       - 8080:8080
     depends_on:
       - postgres
-    restart: unless-stopped
+    restart: on-failure
 
   ping:
     build: frontend/
     ports:
-      - 80:3000
+      - 80:80
     env_file: .env
     depends_on:
       - pong
-    restart: unless-stopped
+    restart: on-failure
 
   pong:
     build: backend/
     env_file: .env
     depends_on:
       - postgres
-    restart: unless-stopped
+    restart: on-failure
