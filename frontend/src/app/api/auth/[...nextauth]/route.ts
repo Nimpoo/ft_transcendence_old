@@ -50,8 +50,8 @@ const handler = NextAuth({
 				return true
 			}
 			return false
-		}
-	}
+		},
+	},
 })
 
 export { handler as GET, handler as POST }
