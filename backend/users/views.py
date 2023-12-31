@@ -1,4 +1,5 @@
 from django.http import JsonResponse, HttpRequest
+from difflib import SequenceMatcher
 from .models import User
 import jwt, requests, os
 
@@ -114,3 +115,15 @@ def connect(request: HttpRequest) -> JsonResponse:
 
   # * Send back his nickname
   return JsonResponse({ 'nickname': user.nickname })
+
+def search(request: HttpRequest) -> JsonResponse:
+
+  query = request.GET.get('q', None)
+  
+  if not query:
+    return JsonResponse({ 'error': 'Bad Request', 'message': 'no query params.' }, status=400)
+
+  def similarity_ratio(a, b):
+    return SequenceMatcher(None, a, b).ratio() * -1
+
+  return JsonResponse({ 'result': [user.nickname for user in sorted(User.objects.all(), key=lambda user: similarity_ratio(user.nickname, query))[:10]] })
