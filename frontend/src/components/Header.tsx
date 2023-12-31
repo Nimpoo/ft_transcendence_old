@@ -2,6 +2,7 @@
 "use client"
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Header(): JSX.Element {
 
@@ -52,14 +53,14 @@ function Header(): JSX.Element {
 				/>
 			</button>
 
-			<button className="absolute right-32">
+			<Link className="absolute right-32" href="/profile">
 				<Image className="rounded-full"
 					src={'https://thispersondoesnotexist.com'}
 					width={80}
 					height={80}
 					alt="pfp"
 				/>
-			</button>
+			</Link>
 
 		</header>
 	)
